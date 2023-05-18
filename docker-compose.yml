@@ -5,7 +5,7 @@ services:
     build: .
   nginx: 
     container_name: nginx
-    build: .
+    build: ./ngnix_conf.sh
     ports:
       - "80:80"
     depends_on:
