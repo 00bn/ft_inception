@@ -1,20 +1,20 @@
 version: '3'
 services:
-  myboocontainer: 
-    container_name: myboocontainer
-    build: .
+  # myboocontainer: 
+  #   container_name: myboocontainer
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
   nginx: 
     container_name: nginx
-    build: ./ngnix_conf.sh
+    build: ./nginx
     ports:
       - "80:80"
     depends_on:
       - wordpress  
-    volumes:
-    -  /Users/badriah/Desktop/bmount:/var/lib/mysql
 
   mariadb:
-    image: mariadb
+    build: ./mariadb
     container_name: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -22,11 +22,11 @@ services:
       MYSQL_USER: wpuser
       MYSQL_PASSWORD: wppassword
     volumes:
-    -  /Users/badriah/Desktop/bmount:/var/lib/mysql
+    -  /Users/badriah/Desktop/dbmount:/var/lib/mysql
 
   wordpress:
+    build: ./wordpress
     container_name: wordpress
-    image: wordpress
     depends_on:
       - mariadb
     ports:
@@ -37,7 +37,7 @@ services:
       WORDPRESS_DB_PASSWORD: wppassword
       WORDPRESS_DB_NAME: wordpress
     volumes:
-    -  /Users/badriah/Desktop/bmount:/var/lib/mysql
+    -  /Users/badriah/Desktop/wp:/var/www/html
 
 # version: '3'
 #   web:
