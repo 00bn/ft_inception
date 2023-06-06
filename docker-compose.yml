@@ -37,7 +37,9 @@ services:
       WORDPRESS_DB_PASSWORD: wppassword
       WORDPRESS_DB_NAME: wordpress
     volumes:
+      # - /home/oobn/ft_inception/wordpress:/var/www/html
     -  /Users/badriah/Desktop/wp:/var/www/html
+    restart: always
 
 # version: '3'
 #   web:

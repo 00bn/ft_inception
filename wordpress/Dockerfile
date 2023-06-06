@@ -16,3 +16,8 @@ WORKDIR /
 RUN chmod +x /wp_conf.sh
 
 ENTRYPOINT [ "./wp_conf.sh" ]
+
+
+
+
+
