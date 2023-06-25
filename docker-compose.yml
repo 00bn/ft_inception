@@ -45,14 +45,14 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/balnahdi/wp
-      # device: /Users/badriah/data/wp
+      device: /Users/badriah/data/wp
+      # device: /home/balnahdi/wp
   md:
       name: md
       driver: local
       driver_opts:
         o: bind
         type: none
-        device: /home/balnahdi/md
-        # device: /Users/badriah/data/md
+        device: /Users/badriah/data/md
+        # device: /home/balnahdi/md
 

@@ -30,7 +30,9 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	sed -i "s/username_here/$DB_USER/" ${wp}
 	sed -i "s/password_here/$DB_PASSWORD/" ${wp}
 	sed -i "s/localhost/$DB_HOST/" ${wp}
-
+	sed -i "s/define( 'WP_DEBUG', false );/define( 'WP_DEBUG', true );/" ${wp}
+	sed -i "s/define( 'WP_INSTALLING', true );/define( 'WP_INSTALLING', true );/" ${wp}
+	
 
 
 	#installation page 
