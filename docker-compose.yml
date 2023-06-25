@@ -19,6 +19,8 @@ services:
     restart: always
     networks:
       - boonetwork
+    volumes:
+      - md:/var/lib/mysql
 
   wordpress:
     build: ./wordpress
@@ -43,4 +45,14 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/badriah/data/wp
+      device: /home/balnahdi/wp
+      # device: /Users/badriah/data/wp
+  md:
+      name: md
+      driver: local
+      driver_opts:
+        o: bind
+        type: none
+        device: /home/balnahdi/md
+        # device: /Users/badriah/data/md
+
