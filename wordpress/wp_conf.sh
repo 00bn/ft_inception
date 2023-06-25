@@ -17,7 +17,7 @@ chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 
 
-if [ ! -f /var/www/html/wp-config.php ]; then 
+if [ ! -e /var/www/html/wp-config.php ]; then 
 	echo "BOO: wp-config.php not found !!"
 
 	cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
