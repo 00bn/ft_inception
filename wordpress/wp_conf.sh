@@ -6,7 +6,7 @@ DB_USER="wpuser"
 DB_PASSWORD="dbpassword"
 DB_HOST="mariadb"
 
-apt-get install -y wget && wget -P /var/www/html/ https://wordpress.org/latest.tar.gz && tar -xvf /var/www/html/latest.tar.gz
+wget -P /var/www/html/ https://wordpress.org/latest.tar.gz && tar -xvf /var/www/html/latest.tar.gz
 
 cp -r /wordpress/* /var/www/html/
 
