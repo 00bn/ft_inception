@@ -1,7 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update && apt-utils   
-
+RUN apt-get update && apt-get install apt-utils -y 
 RUN apt-get install --yes mariadb-server mariadb-client
 
 COPY ./mariadb_conf.sh /mariadb_conf.sh

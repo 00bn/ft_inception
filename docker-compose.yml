@@ -1,17 +1,17 @@
 version: '3'
 services:
-  # nginx: 
-  #   container_name: nginx
-  #   build: ./nginx
-  #   ports:
-  #     - "443:443"
-  #   depends_on:
-  #     - wordpress 
-  #   restart: always 
-  #   networks:
-  #     - boonetwork
-  #   volumes:
-  #     - wp:/var/www/html
+  nginx: 
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "443:443"
+    depends_on:
+      - wordpress 
+    restart: always 
+    networks:
+      - boonetwork
+    volumes:
+      - wp:/var/www/html
 
   mariadb:
     build: ./mariadb
@@ -22,16 +22,16 @@ services:
     volumes:
       - md:/var/lib/mysql
 
-  # wordpress:
-  #   build: ./wordpress
-  #   container_name: wordpress
-  #   depends_on:
-  #     - mariadb
-  #   restart: always
-  #   networks:
-  #     - boonetwork
-  #   volumes:
-  #     - wp:/var/www/html
+  wordpress:
+    build: ./wordpress
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    restart: always
+    networks:
+      - boonetwork
+    volumes:
+      - wp:/var/www/html
 
 networks:
   boonetwork:
