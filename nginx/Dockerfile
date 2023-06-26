@@ -1,6 +1,6 @@
 FROM debian:buster 
 
-RUN apt-get update && apt-get install -y nginx openssl
+RUN apt-get update && apt-get install -y nginx openssl apt-utils
 
 RUN openssl genrsa -out server.key 2048 && \
 openssl req -new -key server.key -out server.csr -subj "/C=AE/ST=AD/L=AD/O=42 School/OU=student/CN=boo" \
