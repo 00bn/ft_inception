@@ -17,7 +17,7 @@ chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 
 
-if [ ! -e /var/www/html/wp-config.php ]; then 
+if [ ! -f /var/www/html/wp-config.php ]; then 
 	echo "BOO: wp-config.php not found !!"
 
 	cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
@@ -25,15 +25,16 @@ if [ ! -e /var/www/html/wp-config.php ]; then
 
 	wp="/var/www/html/wp-config.php"
 
-	wp core download --allow-root --path=/var/www/html/ set DB_NAME=$DB_NAME
-	wp core download --allow-root --path=/var/www/html/ set DB_USER=$DB_USER
-	wp core download --allow-root --path=/var/www/html/ set DB_PASSWORD=$DB_PASSWORD
-	wp core download --allow-root --path=/var/www/html/ set DB_HOST=$DB_HOST
+	# wp core download --allow-root --path=/var/www/html/ set DB_NAME=$DB_NAME
+	# wp core download --allow-root --path=/var/www/html/ set DB_USER=$DB_USER
+	# wp core download --allow-root --path=/var/www/html/ set DB_PASSWORD=$DB_PASSWORD
+	# wp core download --allow-root --path=/var/www/html/ set DB_HOST=$DB_HOST
+	
 	# #update wp-config.php
-	# sed -i "s/database_name_here/$DB_NAME/" ${wp}
-	# sed -i "s/username_here/$DB_USER/" ${wp}
-	# sed -i "s/password_here/$DB_PASSWORD/" ${wp}
-	# sed -i "s/localhost/$DB_HOST/" ${wp}
+	sed -i "s/database_name_here/$DB_NAME/" ${wp}
+	sed -i "s/username_here/$DB_USER/" ${wp}
+	sed -i "s/password_here/$DB_PASSWORD/" ${wp}
+	sed -i "s/localhost/$DB_HOST/" ${wp}
 	# sed -i "s/define( 'WP_DEBUG', false );/define( 'WP_DEBUG', true );/" ${wp}
 	# sed -i "s/define( 'WP_INSTALLING', true );/define( 'WP_INSTALLING', true );/" ${wp}
 	
