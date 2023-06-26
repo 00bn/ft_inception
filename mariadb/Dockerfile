@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update
+RUN apt-get update && apt-utils   
 
 RUN apt-get install --yes mariadb-server mariadb-client
 
