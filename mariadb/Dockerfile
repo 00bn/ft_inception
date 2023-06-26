@@ -1,8 +1,13 @@
 FROM debian:buster
-
-ARG TERM=xterm
-ARG LC_ALL=C.UTF-8
-ARG DEBIAN_FRONTEND=noninteractive
+RUN                                                                                                                     \
+    set     -eux                                                                                                        \ 
+    && apt-get -y update                                                                                                \
+    && apt-get install -y dialog apt-utils                                                                              \
+    && apt-get -y install --no-install-recommends --no-install-suggests --fix-missing bash-static                       \
+    && apt-get -y install gcc-4.8                                                                                       \
+    && apt-get -y install make                                                                                          \
+    && cp /bin/bash-static /sh            
+ 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install --yes mariadb-server mariadb-client
