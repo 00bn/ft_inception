@@ -46,6 +46,8 @@ volumes:
       o: bind
       type: none
       device: /home/balnahdi/wp
+      # device: /home/oobn/ft_inception/wp
+      # device: /wsl.localhost/Ubuntu/home/oobn/ft_inception/wp
       # device: /Users/badriah/data/wp
   md:
       name: md
@@ -54,5 +56,5 @@ volumes:
         o: bind
         type: none
         device: /home/balnahdi/md
+        # device: /home/oobn/ft_inception/md
         # device: /Users/badriah/data/md
-
