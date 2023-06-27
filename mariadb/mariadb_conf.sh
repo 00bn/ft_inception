@@ -15,6 +15,6 @@ mysql -e "FLUSH PRIVILEGES;"
 
 # service mysql stop
 
-mysqld --console
+# mysqld --console
 
 
