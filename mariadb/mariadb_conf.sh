@@ -13,7 +13,7 @@ mysql -e "CREATE USER 'wpuser'@'%' identified by 'dbpassword';"
 mysql -e "GRANT ALL PRIVILEGES ON wpdb.* TO 'wpuser'@'%';"
 mysql -e "FLUSH PRIVILEGES;"
 
-service mysql stop
+# service mysql stop
 
 mysqld --console
 
