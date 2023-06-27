@@ -1,6 +1,10 @@
 FROM debian:buster 
+# Set DEBIAN_FRONTEND to noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y nginx openssl apt-utils
+# Install packages
+RUN apt-get update && apt-get install -y apt-utils 
+RUN  apt-get install -y nginx openssl apt-utils
 
 RUN openssl genrsa -out server.key 2048 && \
 openssl req -new -key server.key -out server.csr -subj "/C=AE/ST=AD/L=AD/O=42 School/OU=student/CN=boo" \

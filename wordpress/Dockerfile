@@ -1,6 +1,11 @@
 FROM debian:buster
+# Set DEBIAN_FRONTEND to noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y php-fpm php-mysql php-mbstring php-xml php-zip php-gd php-bcmath php-cli curl 
+# Install packages
+RUN apt-get update && apt-get install -y apt-utils 
+
+RUN apt-get install -y php-fpm php-mysql php-mbstring php-xml php-zip php-gd php-bcmath php-cli curl 
 # RUN apt-get update && apt-get install -y php-fpm php-mysql php-mbstring php-xml php-zip php-gd php-bcmath php-cli curl 
 RUN service php7.3-fpm start
 
