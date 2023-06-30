@@ -1,6 +1,6 @@
 
-DB_PATH = /Users/badriah/data/md
-PR_PATH = /Users/badriah/data/wp
+DB_PATH = /Users/badriah/Desktop/md
+PR_PATH = /Users/badriah/Desktop/wp
 
 volume:
 	mkdir -p $(DB_PATH) $(WP_PATH)

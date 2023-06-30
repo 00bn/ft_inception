@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx: 
     container_name: nginx
-    build: ./nginx
+    build: ./requirements/nginx
     ports:
       - "443:443"
     depends_on:
@@ -14,7 +14,7 @@ services:
       - wp:/var/www/html
 
   mariadb:
-    build: ./mariadb
+    build: ./requirements/mariadb
     container_name: mariadb
     restart: always
     networks:
@@ -23,7 +23,7 @@ services:
       - md:/var/lib/mysql
 
   wordpress:
-    build: ./wordpress
+    build: ./requirements/wordpress
     container_name: wordpress
     depends_on:
       - mariadb
@@ -45,16 +45,16 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/balnahdi/wp
+      device: /Users/badriah/data/wp
+      # device: /home/balnahdi/wp
       # device: /home/oobn/ft_inception/wp
       # device: /wsl.localhost/Ubuntu/home/oobn/ft_inception/wp
-      # device: /Users/badriah/data/wp
   md:
       name: md
       driver: local
       driver_opts:
         o: bind
         type: none
-        device: /home/balnahdi/md
+        device: /Users/badriah/data/md
+        # device: /home/balnahdi/md
         # device: /home/oobn/ft_inception/md
-        # device: /Users/badriah/data/md
