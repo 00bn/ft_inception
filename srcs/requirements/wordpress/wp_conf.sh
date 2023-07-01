@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Set database variables
-DB_NAME="wpdb"
-DB_USER="wpuser"
-DB_PASSWORD="dbpassword"
-DB_HOST="mariadb"
-
 wget -P /var/www/html/ https://wordpress.org/latest.tar.gz && tar -xvf /var/www/html/latest.tar.gz
 
 cp -r /wordpress/* /var/www/html/

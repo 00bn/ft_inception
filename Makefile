@@ -1,6 +1,6 @@
 
-DB_PATH = /home/balnahdi/md
-WP_PATH = /home/balnahdi/wp
+DB_PATH = /home/balnahdi/data/md
+WP_PATH = /home/balnahdi/data/wp
 
 volume:
 	@sudo mkdir -p $(DB_PATH) $(WP_PATH)
