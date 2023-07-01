@@ -1,29 +1,31 @@
 
-DB_PATH = /Users/badriah/Desktop/md
-WP_PATH = /Users/badriah/Desktop/wp
+DB_PATH = /home/balnahdi/md
+WP_PATH = /home/balnahdi/wp
 
 volume:
-	mkdir -p $(DB_PATH) $(WP_PATH)
+	@sudo mkdir -p $(DB_PATH) $(WP_PATH)
 
 build:
-	docker-compose -f ./srcs/docker-compose.yml build 
-
+	#START
+	@sudo docker-compose -f ./srcs/docker-compose.yml build 
+	#END
 run:
-	docker-compose -f ./srcs/docker-compose.yml up
+	@sudo docker-compose -f ./srcs/docker-compose.yml up
 
 build_run:
-	docker-compose -f ./srcs/docker-compose.yml up --build
+	@sudo docker-compose -f ./srcs/docker-compose.yml up --build
 
 stop:
-	docker-compose -f ./srcs/docker-compose.yml stop
+	@sudo docker-compose -f ./srcs/docker-compose.yml stop
 
 clean:
-	docker-compose -f ./srcs/docker-compose.yml down -v
-	rm -rf $(DB_PATH) $(WP_PATH)
+	@sudo docker-compose -f ./srcs/docker-compose.yml down
+	@sudo docker-compose -f ./srcs/docker-compose.yml down -v
+	@sudo rm -rf $(DB_PATH) $(WP_PATH)
 
 all: volume build 
 
-re: clean all
+re: clean all run
 
 fclean: clean
-	docker system prune -a -f
+	@sudo docker system prune -a -f

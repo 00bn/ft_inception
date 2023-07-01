@@ -45,8 +45,7 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /Users/badriah/data/wp
-      # device: /home/balnahdi/wp
+      device: /home/balnahdi/wp
       # device: /home/oobn/ft_inception/wp
       # device: /wsl.localhost/Ubuntu/home/oobn/ft_inception/wp
   md:
@@ -55,6 +54,5 @@ volumes:
       driver_opts:
         o: bind
         type: none
-        device: /Users/badriah/data/md
-        # device: /home/balnahdi/md
+        device: /home/balnahdi/md
         # device: /home/oobn/ft_inception/md
