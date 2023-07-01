@@ -19,6 +19,8 @@ services:
     restart: always
     networks:
       - boonetwork
+    env_file:
+      - ./.env
     volumes:
       - md:/var/lib/mysql
 
@@ -30,6 +32,8 @@ services:
     restart: always
     networks:
       - boonetwork
+    env_file:
+      - ./.env
     volumes:
       - wp:/var/www/html
 
