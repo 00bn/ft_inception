@@ -26,11 +26,10 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 
 
 	#installation page 
-	wp core install --allow-root --path=/var/www/html/ --url=localhost --title="YOOO IT'S B O O" --admin_user="wpuser" --admin_password="dbpassword" --admin_email="oobn4444@gmail.com"
+	wp core install --allow-root --path=/var/www/html/ --url=localhost --title="YOOO IT'S B O O" --admin_user="$DB_USER" --admin_password="$DB_PASSWORD" --admin_email="$WP_ADMIN_EMAIL"
 	echo "BOO: wp installation page !!"
 	#user creation
-
-	wp user create --allow-root --path=/var/www/html/ "wp_boo" "nahdib0@gmail.com" --role=contributor --user_pass="boopassword"
+	wp user create --allow-root --path=/var/www/html/ "$WP_USER_NAME" "$WP_USER_EMAIL" --role=contributor --user_pass="$WP_USER_PASSWORD"
 	echo "BOO: create user in wp db !!"
 fi
 chown -R www-data:www-data /var/www/html/

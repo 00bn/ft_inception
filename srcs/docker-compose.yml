@@ -50,8 +50,6 @@ volumes:
       o: bind
       type: none
       device: /home/balnahdi/data/wp
-      # device: /home/oobn/ft_inception/wp
-      # device: /wsl.localhost/Ubuntu/home/oobn/ft_inception/wp
   md:
       name: md
       driver: local
@@ -59,4 +57,3 @@ volumes:
         o: bind
         type: none
         device: /home/balnahdi/data/md
-        # device: /home/oobn/ft_inception/md
