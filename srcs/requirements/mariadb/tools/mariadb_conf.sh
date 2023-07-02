@@ -8,6 +8,7 @@ sed -i 's/^bind-address\s*=.*/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d
 sed -i 's/^#port/port/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 service mysql start
+echo $DB_NAME
 if [! -d "/var/lib/mysql/$DB_NAME"]; then
 mysql -e "CREATE DATABASE $DB_NAME ;"
 mysql -e "CREATE USER '$DB_USER'@'%' identified by '$DB_PASSWORD';"
