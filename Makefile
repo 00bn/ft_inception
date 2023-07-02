@@ -18,8 +18,10 @@ build_run:
 stop:
 	@sudo docker-compose -f ./srcs/docker-compose.yml stop
 
+down:	
+	@sudo docker-compose -f ./srcs/docker-compose.yml down -v
+
 clean:
-	@sudo docker-compose -f ./srcs/docker-compose.yml down
 	@sudo docker-compose -f ./srcs/docker-compose.yml down -v
 	@sudo rm -rf $(DB_PATH) $(WP_PATH)
 
