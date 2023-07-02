@@ -25,9 +25,9 @@ clean:
 	@sudo docker-compose -f ./srcs/docker-compose.yml down -v
 	@sudo rm -rf $(DB_PATH) $(WP_PATH)
 
-all: volume build 
+all: volume build run 
 
-re: clean all run
+re: clean all 
 
 fclean: clean
 	@sudo docker system prune -a -f
